@@ -1,0 +1,78 @@
+create table tk_account (
+	id	varchar(20) not null primary key,
+    passwd varchar(20) not null,
+    username varchar(20) not null,
+    mobile varchar(15),
+    email varchar(30)
+);
+create table tk_posting(
+	num int not null auto_increment primary key,
+    id varchar(20) not null,
+    name varchar(20) not null,
+    head varchar(50) not null,
+    body varchar(100) not null
+);
+create table tk_comment(
+	num int not null auto_increment primary key,
+    posting_num int not null,
+    id varchar(20) not null,
+    name varchar(20) not null,
+    cmt varchar(50)
+);
+
+insert into tk_account values('hhs','1','[교수]허훈식','01025123218','hhs@kpu.ac.kr');
+insert into tk_account values('ojjj','123123','탁원준','010222904218','tojbabo@kpu.ac.kr');
+insert into tk_account values('nam','2','남경현','010122230302','hyenazzz@naver.com');
+insert into tk_account values('bae','3','배지예','01012778302','jiyegood@naver.com');
+insert into tk_account values('lee','4','이영주','01012480302','0_ju@naver.com');
+insert into tk_account values('sin','5','신정희','01099894482','jungee@naver.com');
+insert into tk_account values('lse','6','이상은','01012348232','sangun@naver.com');
+insert into tk_account values('hse','7','한세은','01066342232','sen@naver.com');
+
+
+insert into tk_posting(id,name,head,body) values('ojjj','탁원준','안녕하세요','처음 뵙겠습니다. 탁원준이라고 합니다 잘부탁드려용^^');
+insert into tk_posting(id,name,head,body) values('nam','남경현','아니 무오오오오해','정신 안차리지');
+insert into tk_posting(id,name,head,body) values('ojjj','탁원준','근데 혹시','이거 이렇게 하는거 맞나요?/ 헤헤헤');
+insert into tk_posting(id,name,head,body) values('bae','배지예','잼예 해줘 잼예~~~','아니 다들 나 뺴고 어디갔어?');
+insert into tk_posting(id,name,head,body) values('lee','이영주','저 다들 이쪽 한번만 봐주세요','다들 행복해야해...');
+insert into tk_posting(id,name,head,body) values('sin','신정희','한대 맞을래?','입에 있는거 삼키고 말해');
+insert into tk_posting(id,name,head,body) values('ojjj','탁원준','ㅠㅠㅠ','제가 죄송해요');
+insert into tk_posting(id,name,head,body) values('sin','신정희','원준 뭐 먹고 싶어? 말만해','비싼거 불러봐 한번');
+insert into tk_posting(id,name,head,body) values('bae','배지예','다들 과제는 다 한거야??','웹프 나만 망친거 같아');
+insert into tk_posting(id,name,head,body) values('lee','이영주','눈치 챙겨','이번 주 목요일 OT 있는거 알지?');
+insert into tk_posting(id,name,head,body) values('hhs','[교수]허훈식','[공지]빠르게 제출하세요','과제 제출 기한을 연장합니다.');
+insert into tk_posting(id,name,head,body) values('hse','한세은','나도 가입했따','누가 만든거야 이거 신기하네');
+insert into tk_posting(id,name,head,body) values('lse','이상은','[쭈굴]또 나만 빼놓고 하는거야','나 버리지 말아조 애들아');
+
+
+
+insert into tk_comment(posting_num,id,name,cmt) values(13,'sin','신정희','529529');
+insert into tk_comment(posting_num,id,name,cmt) values(13,'hse','한세은','센이도 껴조');
+insert into tk_comment(posting_num,id,name,cmt) values(13,'sin','신정희','진짜 쳐 디지고싶냐');
+insert into tk_comment(posting_num,id,name,cmt) values(13,'lse','이상은','애들아 고마어');
+insert into tk_comment(posting_num,id,name,cmt) values(12,'bus','[교수]배유석','한세은 학생은 인공지능도 듣고 선형대수학도 듣고 열심히하는구만');
+insert into tk_comment(posting_num,id,name,cmt) values(12,'ojjj','탁원준','성지 순례 왔습니다.');
+insert into tk_comment(posting_num,id,name,cmt) values(11,'sin','신정희','감사합니다');
+insert into tk_comment(posting_num,id,name,cmt) values(11,'ojjj','탁원준','교수님 전 이미 다 해놨었습니다.');
+insert into tk_comment(posting_num,id,name,cmt) values(11,'lee','이영주','킹갓교수님...');
+insert into tk_comment(posting_num,id,name,cmt) values(8,'ojjj','탁원준','회....');
+insert into tk_comment(posting_num,id,name,cmt) values(8,'sin','신정희','디ㅜ져 진짜');
+insert into tk_comment(posting_num,id,name,cmt) values(7,'ojjj','탁원준','댓글 달아주신분들 감사합니다.');
+insert into tk_comment(posting_num,id,name,cmt) values(7,'sin','신정희','아니 조용안해?');
+insert into tk_comment(posting_num,id,name,cmt) values(7,'nam','남경현','아니 원준 무오오오오오어허냐고');
+insert into tk_comment(posting_num,id,name,cmt) values(6,'ojjj','탁원준','미안해ㅠㅠㅠ');
+insert into tk_comment(posting_num,id,name,cmt) values(6,'bae','배지예','와 정히 잘나가~');
+insert into tk_comment(posting_num,id,name,cmt) values(6,'lee','이영주','ㅋㅋㅋㅋㅋ 정히가 실세야');
+insert into tk_comment(posting_num,id,name,cmt) values(6,'sin','신정희','다들 수업 끝나고 딱 기다려');
+insert into tk_comment(posting_num,id,name,cmt) values(5,'lee','이영주','진짜루.../');
+insert into tk_comment(posting_num,id,name,cmt) values(5,'ojjj','탁원준','무플방지위원회 입니다.');
+
+
+------------------------------------------------------------------------------------------------
+drop table tk_account;
+drop table tk_posting;
+drop table tk_comment;
+
+select * from tk_account;
+select * from tk_comment;
+select * from tk_posting order by num desc;
