@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="t.o.j.mapper.postM">
+  
+     <select id="selectByid" resultType="postVO">
+ 		select * from tk_posting where num = #{num}
+     </select>
+     
+     <select id="selectlast" resultType="postVO">
+ 		select * from tk_posting order by num desc limit 1
+     </select>
+ 	
+     <insert id="insert"> 
+   		insert into tk_posting (id, name, head, body) values
+ 		(#{id}, #{name}, #{head}, #{body})
+     </insert> 
+ 	
+    
+     <select id="selectAll" resultType="postVO">
+     <![CDATA[
+ 		select * from tk_posting
+      ]]> 
+     </select>
+     
+     <select id="selectAll_sort" resultType="postVO">
+     <![CDATA[
+ 		select * from tk_posting order by num desc
+      ]]> 
+     </select>
+     
+      <select id="selectAll_name" resultType="postVO">
+     <![CDATA[
+ 		select * from tk_posting where name like #{data} order by num desc
+      ]]> 
+     </select>
+     
+      <select id="selectAll_title" resultType="postVO">
+     <![CDATA[
+ 		select * from tk_posting where head like #{data} order by num desc
+      ]]> 
+     </select>
+     
+ 	
+     <update id="update">
+	 	update tk_posting set head =#{head}, body =#{body}	 where num = #{num}
+     </update>
+     
+     <update id="update_head">
+	 	update tk_posting set head =#{head} where num = #{num}
+     </update>
+     
+     <update id="update_body">
+	 	update tk_posting set body =#{body}	 where num = #{num}
+     </update>
+ 
+    <delete id="delete">
+		delete from tk_posting where num = #{num}
+    </delete>
+	
+</mapper>  
